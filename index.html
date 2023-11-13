@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phathu Card</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a0f415c77f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="loader"></div>
+
+<div id="header">
+    <div class="container">
+        <nav>
+            <img class="logo" src="logo/Dark Blue Modern Professional Technology Company Logo (1).png" alt="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>WEB Designer</p>
+            <h1>Hi, I'm <span>Phathutshedzo</span><br>the founder of LUKS Web Design</h1>
+        </div>
+    </div>
+</div>
+<!-- ------------about---------- --> 
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="logo/me .jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I'm Phathutshedzo Lukoto the founder of Luks web design. The Luks web design is the compuny that create nice website and that works perfectly and the website that I create is the website that will benefit you and you business as it will be it will be easy for people to access your website.</p>
+                <h1 class="sub-title">About The Business</h1>
+                <p></p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab(event, 'skills')">Skills</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Web Development</span><br>Designing Websites</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- -----------services---------- -->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="Services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>You want a website for your bussiness and you don't know who to contact? Well we are the right people to contact . At Luks web design we can service you with the most breathtaking website  for that business of yours .Your website can be made in a short period of time. At luks web design we treat everyone equally and we will give you the best top quality services you could ever imagine that's why you should rely on us.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-address-card"></i>
+                <h2>Business card</h2>
+                <p>Do you have a business and you feel like not enough people know about it? Well we know what you could do to get more people to know about your business. Let us  Luks web design make you a business card so that business of yours can get more people as soon as possible. Your business card can be as fast as possible we can promise you that your business card will be top-notch because here at Luks Web design we always leave our customers with a smile.</p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ------------contant------------ -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contant-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-regular fa-envelope"></i>phathulukoto18@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>0662168740</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100007996697288"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://wa.link/psguqu"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/p_lukoto/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.messenger.com/t/100031282298409"><i class="fa-brands fa-facebook-messenger"></i></a>
+                </div>
+            </div>
+            <div class="contant-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>copyright © LUKS. Made<i class="fa-solid fa-heart"></i> by Easy tutorials</p>
+    </div>
+</div>
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(event, tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu() {
+        sidemenu.style.right = "0";
+    }
+    function closemenu() {
+        sidemenu.style.right = "-200px";
+    }
+
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbygIChtNIgkKsW273gciGNC7KHXVYVna0KV9dtuWsNPrDfvi7m2KSMCTo7XOzkfHISoQw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  <script>
+
+    var loader = document.querySelector(".loader")
+    console.log(loader);
+
+    window.addEventListener("load", vanish);
+
+    function vanish() {
+        loader.classList.add("disppear");
+    }
+
+  </script>
+
+</body>
+</html>
